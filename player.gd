@@ -38,3 +38,4 @@ func _physics_process(_delta):
 
 func _on_death_zone_body_entered(body):
 	get_tree().change_scene("res://level 0.tscn")
+

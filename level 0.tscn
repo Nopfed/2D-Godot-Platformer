@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://world tile set.tres" type="TileSet" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://pass thru tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://collectible.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/World Tiles/motherboard gold.png" type="Texture" id=5]
+[ext_resource path="res://HUD.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1272.64, 129.146 )
@@ -28,10 +30,6 @@ collision_layer = 4
 position = Vector2( 2114.72, 538.782 )
 shape = SubResource( 1 )
 
-[node name="collectible" parent="." instance=ExtResource( 4 )]
-position = Vector2( 332.861, -94.2561 )
-scale = Vector2( 0.2, 0.2 )
-
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 64.4888, -27.8454 )
 
@@ -44,4 +42,60 @@ drag_margin_v_enabled = true
 drag_margin_left = 0.25
 drag_margin_right = 0.25
 editor_draw_limits = true
+
+[node name="collectibles" type="Node2D" parent="."]
+
+[node name="collectible" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 429.734, -27.7881 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible2" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 323.668, -27.0809 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible3" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 654.594, -31.3236 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible4" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 535.093, -28.4951 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+margin_left = 27.861
+margin_top = 558.399
+margin_right = 40.861
+margin_bottom = 571.399
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x" type="Label" parent="HUD"]
+margin_left = 50.0
+margin_top = 558.0
+margin_right = 60.0
+margin_bottom = 572.0
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Collectibles" type="Label" parent="HUD"]
+margin_left = 64.3315
+margin_top = 558.669
+margin_right = 103.331
+margin_bottom = 572.669
+text = "##"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="death zone" to="player" method="_on_death_zone_body_entered"]
+[connection signal="collectible_collected" from="collectibles/collectible" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible2" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible3" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible4" to="HUD" method="_on_collectible_collected"]
