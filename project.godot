@@ -50,6 +50,14 @@ jump={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="floor/platform"
+2d_physics/layer_3="death zone"
+2d_physics/layer_4="collectible"
+2d_physics/layer_5="hazards"
+
 [rendering]
 
 quality/driver/driver_name="GLES2"

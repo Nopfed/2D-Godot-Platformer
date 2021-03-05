@@ -2,13 +2,14 @@ extends KinematicBody2D
 
 #velocity
 var v = Vector2(0, 0)
+var collectibles = 0
 
 const SPEED = 300
 const MAX_SPEED = 300
 const GRAVITY = 30
 const JUMP = -600
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	#move to the right
 	if Input.is_action_pressed("right"):
 		if !Input.is_action_pressed("left"):
@@ -33,3 +34,7 @@ func _physics_process(delta):
 	if !Input.is_action_pressed("right"):
 		if !Input.is_action_pressed("left"):
 			v.x = lerp(v.x, 0, 0.9)
+
+
+func _on_death_zone_body_entered(body):
+	get_tree().change_scene("res://level 0.tscn")

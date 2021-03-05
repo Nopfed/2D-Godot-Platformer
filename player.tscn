@@ -6,6 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="player" type="KinematicBody2D"]
+collision_mask = 30
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
