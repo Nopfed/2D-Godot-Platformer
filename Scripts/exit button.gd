@@ -4,8 +4,12 @@ extends Button
 
 
 func _on_Play_Button_pressed():
-	get_tree().change_scene("res://level 0.tscn")
+	$boop2.play()
+	yield($boop2,"finished")
+	get_tree().quit()
+
+
 
 
 func _on_Play_Button_mouse_entered():
-	pass # Replace with function body.
+	$boop1.play()

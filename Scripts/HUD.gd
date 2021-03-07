@@ -10,3 +10,4 @@ func _ready():
 func _on_collectible_collected():
 	collectibles += 1
 	$Collectibles.text = String(collectibles)
+	$collectSound.play()

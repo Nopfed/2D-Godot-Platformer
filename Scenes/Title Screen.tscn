@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Fonts/DotGothic16-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Play Button.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/exit button.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Play Button.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/settings button.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Audio/SFX/UI boop 1.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/SFX/UI boop 2.wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -25,6 +29,9 @@ __meta__ = {
 margin_right = 1024.0
 margin_bottom = 600.0
 color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Title" type="Label" parent="."]
 margin_left = 152.0
@@ -44,7 +51,7 @@ __meta__ = {
 margin_left = 424.0
 margin_top = 256.0
 margin_right = 596.0
-margin_bottom = 324.0
+margin_bottom = 310.0
 focus_mode = 0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0313726, 0.721569, 0.231373, 1 )
@@ -54,34 +61,53 @@ shortcut_in_tooltip = false
 enabled_focus_mode = 0
 text = "initialize"
 flat = true
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Options Button" type="Button" parent="."]
-margin_left = 432.0
-margin_top = 304.0
-margin_right = 592.0
-margin_bottom = 372.0
+[node name="boop1" type="AudioStreamPlayer" parent="Play Button"]
+stream = ExtResource( 5 )
+volume_db = -15.898
+
+[node name="boop2" type="AudioStreamPlayer" parent="Play Button"]
+stream = ExtResource( 6 )
+volume_db = -15.0
+
+[node name="settings button" type="Button" parent="."]
+visible = false
+margin_left = 424.0
+margin_top = 312.0
+margin_right = 596.0
+margin_bottom = 366.0
 focus_mode = 0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0313726, 0.721569, 0.231373, 1 )
 custom_colors/font_color_hover = Color( 0.992157, 0.596078, 0.00784314, 1 )
 custom_colors/font_color_pressed = Color( 0.0235294, 0.662745, 0.823529, 1 )
+disabled = true
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 text = "settings"
 flat = true
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Exit Button" type="Button" parent="."]
-margin_left = 432.0
-margin_top = 352.0
-margin_right = 592.0
-margin_bottom = 420.0
+[node name="boop1" type="AudioStreamPlayer" parent="settings button"]
+stream = ExtResource( 5 )
+volume_db = -15.898
+
+[node name="boop2" type="AudioStreamPlayer" parent="settings button"]
+stream = ExtResource( 6 )
+volume_db = -15.0
+
+[node name="exit button" type="Button" parent="."]
+margin_left = 424.0
+margin_top = 368.0
+margin_right = 596.0
+margin_bottom = 422.0
 focus_mode = 0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0313726, 0.721569, 0.231373, 1 )
@@ -91,10 +117,21 @@ shortcut_in_tooltip = false
 enabled_focus_mode = 0
 text = "exit"
 flat = true
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="boop1" type="AudioStreamPlayer" parent="exit button"]
+stream = ExtResource( 5 )
+volume_db = -15.898
+
+[node name="boop2" type="AudioStreamPlayer" parent="exit button"]
+stream = ExtResource( 6 )
+volume_db = -15.0
 [connection signal="mouse_entered" from="Play Button" to="Play Button" method="_on_Play_Button_mouse_entered"]
 [connection signal="pressed" from="Play Button" to="Play Button" method="_on_Play_Button_pressed"]
+[connection signal="mouse_entered" from="settings button" to="settings button" method="_on_Play_Button_mouse_entered"]
+[connection signal="pressed" from="settings button" to="settings button" method="_on_Play_Button_pressed"]
+[connection signal="mouse_entered" from="exit button" to="exit button" method="_on_Play_Button_mouse_entered"]
+[connection signal="pressed" from="exit button" to="exit button" method="_on_Play_Button_pressed"]

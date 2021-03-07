@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Audio/SFX/jump sound.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Sprites/Misc/player.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Audio/SFX/death noise.wav" type="AudioStream" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="player" type="KinematicBody2D"]
+collision_mask = 30
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1.24806, 1.24896 )
+texture = ExtResource( 3 )
+
+[node name="Jump Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -25.0
+pitch_scale = 1.18
+
+[node name="death sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -15.0

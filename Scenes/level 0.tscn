@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://world tile set.tres" type="TileSet" id=1]
-[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://pass thru tileset.tres" type="TileSet" id=3]
-[ext_resource path="res://collectible.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/collectible.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/World Tiles/motherboard gold.png" type="Texture" id=5]
-[ext_resource path="res://HUD.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/HUD.gd" type="Script" id=6]
 [ext_resource path="res://Assets/World Tiles/motherboard red.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Audio/SFX/collect 1.wav" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.0029, 32.0704 )
@@ -17,26 +18,6 @@ extents = Vector2( 32.0029, 32.0704 )
 tile_set = ExtResource( 3 )
 collision_layer = 2
 format = 1
-
-[node name="death zone" type="Area2D" parent="."]
-position = Vector2( 1264, 176 )
-scale = Vector2( 8.14623, 4.98259 )
-collision_layer = 4
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="death zone"]
-texture = ExtResource( 7 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="death zone"]
-shape = SubResource( 1 )
-
-[node name="Tiles Solid" type="TileMap" parent="."]
-tile_set = ExtResource( 1 )
-collision_layer = 2
-format = 1
-tile_data = PoolIntArray( -1507328, 6, 0, -1441792, 6, 0, -1376256, 6, 0, -1310720, 6, 0, -1245184, 6, 0, -1179648, 6, 0, -1114112, 6, 0, -1048576, 6, 0, -983040, 6, 0, -917504, 6, 0, -851968, 6, 0, -786432, 6, 0, -720896, 6, 0, -655360, 6, 0, -589824, 6, 0, -524288, 6, 0, -458752, 6, 0, -393216, 6, 0, -327680, 6, 0, -262144, 6, 0, -196608, 6, 0, -131072, 6, 0, -65536, 6, 0, 0, 6, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 5, 6, 0, 6, 6, 0, 7, 6, 0, 8, 6, 0, 9, 6, 0, 10, 6, 0, 11, 6, 0, 12, 6, 0, 13, 6, 0, 14, 6, 0, 15, 6, 0, 18, 6, 0, 19, 6, 0, 20, 6, 0, 65536, 6, 0, 65537, 6, 0, 65538, 6, 0, 65539, 6, 0, 65540, 6, 0, 65541, 6, 0, 65542, 6, 0, 65543, 6, 0, 65544, 6, 0, 65545, 6, 0, 65546, 6, 0, 65547, 6, 0, 65548, 6, 0, 65549, 6, 0, 65550, 6, 0, 65551, 6, 0, 131072, 6, 0, 131073, 6, 0, 131074, 6, 0, 131075, 6, 0, 131076, 6, 0, 131077, 6, 0, 131078, 6, 0, 131079, 6, 0, 131080, 6, 0, 131081, 6, 0, 131082, 6, 0, 131083, 6, 0, 131084, 6, 0, 131085, 6, 0, 131086, 6, 0, 131087, 6, 0, 196608, 6, 0, 196609, 6, 0, 196610, 6, 0, 196611, 6, 0, 196612, 6, 0, 196613, 6, 0, 196614, 6, 0, 196615, 6, 0, 196616, 6, 0, 196617, 6, 0, 196618, 6, 0, 196619, 6, 0, 196620, 6, 0, 196621, 6, 0, 196622, 6, 0, 196623, 6, 0, 262144, 6, 0, 262145, 6, 0, 262146, 6, 0, 262147, 6, 0, 262148, 6, 0, 262149, 6, 0, 262150, 6, 0, 262151, 6, 0, 262152, 6, 0, 262153, 6, 0, 262154, 6, 0, 262155, 6, 0, 262156, 6, 0, 262157, 6, 0, 262158, 6, 0, 262159, 6, 0 )
 
 [node name="collectibles" type="Node2D" parent="."]
 position = Vector2( 31.1479, -96.2752 )
@@ -71,6 +52,26 @@ drag_margin_right = 0.25
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
+[node name="death zone" type="Area2D" parent="."]
+position = Vector2( 1264, 176 )
+scale = Vector2( 8.14623, 4.98259 )
+collision_layer = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="death zone"]
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="death zone"]
+shape = SubResource( 1 )
+
+[node name="Tiles Solid" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( -1507328, 6, 0, -1441792, 6, 0, -1376256, 6, 0, -1310720, 6, 0, -1245184, 6, 0, -1179648, 6, 0, -1114112, 6, 0, -1048576, 6, 0, -983040, 6, 0, -917504, 6, 0, -851968, 6, 0, -786432, 6, 0, -720896, 6, 0, -655360, 6, 0, -589824, 6, 0, -524288, 6, 0, -458752, 6, 0, -393216, 6, 0, -327680, 6, 0, -262144, 6, 0, -196608, 6, 0, -131072, 6, 0, -65536, 6, 0, 0, 6, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 5, 6, 0, 6, 6, 0, 7, 6, 0, 8, 6, 0, 9, 6, 0, 10, 6, 0, 11, 6, 0, 12, 6, 0, 13, 6, 0, 14, 6, 0, 15, 6, 0, 18, 6, 0, 19, 6, 0, 20, 6, 0, 65536, 6, 0, 65537, 6, 0, 65538, 6, 0, 65539, 6, 0, 65540, 6, 0, 65541, 6, 0, 65542, 6, 0, 65543, 6, 0, 65544, 6, 0, 65545, 6, 0, 65546, 6, 0, 65547, 6, 0, 65548, 6, 0, 65549, 6, 0, 65550, 6, 0, 65551, 6, 0, 131072, 6, 0, 131073, 6, 0, 131074, 6, 0, 131075, 6, 0, 131076, 6, 0, 131077, 6, 0, 131078, 6, 0, 131079, 6, 0, 131080, 6, 0, 131081, 6, 0, 131082, 6, 0, 131083, 6, 0, 131084, 6, 0, 131085, 6, 0, 131086, 6, 0, 131087, 6, 0, 196608, 6, 0, 196609, 6, 0, 196610, 6, 0, 196611, 6, 0, 196612, 6, 0, 196613, 6, 0, 196614, 6, 0, 196615, 6, 0, 196616, 6, 0, 196617, 6, 0, 196618, 6, 0, 196619, 6, 0, 196620, 6, 0, 196621, 6, 0, 196622, 6, 0, 196623, 6, 0, 262144, 6, 0, 262145, 6, 0, 262146, 6, 0, 262147, 6, 0, 262148, 6, 0, 262149, 6, 0, 262150, 6, 0, 262151, 6, 0, 262152, 6, 0, 262153, 6, 0, 262154, 6, 0, 262155, 6, 0, 262156, 6, 0, 262157, 6, 0, 262158, 6, 0, 262159, 6, 0 )
+
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 6 )
 
@@ -104,8 +105,12 @@ text = "##"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="body_entered" from="death zone" to="player" method="_on_death_zone_body_entered"]
+
+[node name="collectSound" type="AudioStreamPlayer" parent="HUD"]
+stream = ExtResource( 8 )
+volume_db = -15.0
 [connection signal="collectible_collected" from="collectibles/collectible" to="HUD" method="_on_collectible_collected"]
 [connection signal="collectible_collected" from="collectibles/collectible2" to="HUD" method="_on_collectible_collected"]
 [connection signal="collectible_collected" from="collectibles/collectible3" to="HUD" method="_on_collectible_collected"]
 [connection signal="collectible_collected" from="collectibles/collectible4" to="HUD" method="_on_collectible_collected"]
+[connection signal="body_entered" from="death zone" to="player" method="_on_death_zone_body_entered"]

@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="2D simple platformer"
 config/description="A simple 2D platformer game."
-run/main_scene="res://Title Screen.tscn"
+run/main_scene="res://Scenes/Title Screen.tscn"
 config/icon="res://Assets/Sprites/Misc/player.png"
 
 [display]
