@@ -26,6 +26,7 @@ func _physics_process(_delta):
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		v.y = JUMP
+		$"Jump Sound".play()
 	
 	#calculate movement and floor direction
 	v = move_and_slide(v, Vector2.UP)

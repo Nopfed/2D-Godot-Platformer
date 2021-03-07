@@ -94,4 +94,7 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[connection signal="mouse_entered" from="Play Button" to="Play Button" method="_on_Play_Button_mouse_entered"]
 [connection signal="pressed" from="Play Button" to="Play Button" method="_on_Play_Button_pressed"]
