@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Retro_8-Bit_Game-Interface_UI_11.wav-da0fb0414f005c5cdd76f950a2e0a5bd.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Retro_8-Bit_Game-Interface_UI_11.wav"
+dest_files=[ "res://.import/Retro_8-Bit_Game-Interface_UI_11.wav-da0fb0414f005c5cdd76f950a2e0a5bd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

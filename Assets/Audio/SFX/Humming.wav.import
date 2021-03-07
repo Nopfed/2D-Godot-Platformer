@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Humming.wav-1e345e3cc814499d976c7a3e20524328.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Humming.wav"
+dest_files=[ "res://.import/Humming.wav-1e345e3cc814499d976c7a3e20524328.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

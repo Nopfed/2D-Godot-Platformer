@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Retro_8-Bit_Game-Gun_Laser_Weapon_Shoot_Beam_08.wav-7b9daa7d4a3190034de7552fa667279b.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Retro_8-Bit_Game-Gun_Laser_Weapon_Shoot_Beam_08.wav"
+dest_files=[ "res://.import/Retro_8-Bit_Game-Gun_Laser_Weapon_Shoot_Beam_08.wav-7b9daa7d4a3190034de7552fa667279b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

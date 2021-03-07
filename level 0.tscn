@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://world tile set.tres" type="TileSet" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://collectible.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/World Tiles/motherboard gold.png" type="Texture" id=5]
 [ext_resource path="res://HUD.gd" type="Script" id=6]
+[ext_resource path="res://Assets/World Tiles/motherboard red.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1272.64, 129.146 )
+extents = Vector2( 32.0029, 32.0704 )
 
 [node name="level 0" type="Node2D"]
 
@@ -17,21 +18,47 @@ tile_set = ExtResource( 3 )
 collision_layer = 2
 format = 1
 
+[node name="death zone" type="Area2D" parent="."]
+position = Vector2( 1264, 176 )
+scale = Vector2( 8.14623, 4.98259 )
+collision_layer = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="death zone"]
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="death zone"]
+shape = SubResource( 1 )
+
 [node name="Tiles Solid" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -655361, 8, 0, -589825, 8, 0, -524289, 8, 0, -458753, 8, 0, -393217, 8, 0, -327681, 8, 0, -262145, 8, 0, -196609, 8, 0, -131073, 8, 0, -65537, 8, 0, -1, 8, 0, 65535, 8, 0, 0, 8, 0, 1, 8, 0, 2, 8, 0, 3, 8, 0, 4, 8, 0, 5, 8, 0, 6, 8, 0, 7, 8, 0, 8, 8, 0, 9, 8, 0, 10, 8, 0, 11, 8, 0, 12, 8, 0, 13, 8, 0, 14, 8, 0, 15, 8, 0, 18, 8, 0, 19, 8, 0, 20, 8, 0, 131071, 8, 0, 65536, 8, 0, 65537, 8, 0, 65538, 8, 0, 65539, 8, 0, 65540, 8, 0, 65541, 8, 0, 65542, 8, 0, 65543, 8, 0, 65544, 8, 0, 65545, 8, 0, 65546, 8, 0, 65547, 8, 0, 65548, 8, 0, 65549, 8, 0, 65550, 8, 0, 65551, 8, 0, 196607, 8, 0, 131072, 8, 0, 131073, 8, 0, 131074, 8, 0, 131075, 8, 0, 131076, 8, 0, 131077, 8, 0, 131078, 8, 0, 131079, 8, 0, 131080, 8, 0, 131081, 8, 0, 131082, 8, 0, 131083, 8, 0, 131084, 8, 0, 131085, 8, 0, 131086, 8, 0, 131087, 8, 0, 262143, 8, 0, 196608, 8, 0, 196609, 8, 0, 196610, 8, 0, 196611, 8, 0, 196612, 8, 0, 196613, 8, 0, 196614, 8, 0, 196615, 8, 0, 196616, 8, 0, 196617, 8, 0, 196618, 8, 0, 196619, 8, 0, 196620, 8, 0, 196621, 8, 0, 196622, 8, 0, 196623, 8, 0, 327679, 8, 0, 262144, 8, 0, 262145, 8, 0, 262146, 8, 0, 262147, 8, 0, 262148, 8, 0, 262149, 8, 0, 262150, 8, 0, 262151, 8, 0, 262152, 8, 0, 262153, 8, 0, 262154, 8, 0, 262155, 8, 0, 262156, 8, 0, 262157, 8, 0, 262158, 8, 0, 262159, 8, 0 )
+tile_data = PoolIntArray( -1507328, 6, 0, -1441792, 6, 0, -1376256, 6, 0, -1310720, 6, 0, -1245184, 6, 0, -1179648, 6, 0, -1114112, 6, 0, -1048576, 6, 0, -983040, 6, 0, -917504, 6, 0, -851968, 6, 0, -786432, 6, 0, -720896, 6, 0, -655360, 6, 0, -589824, 6, 0, -524288, 6, 0, -458752, 6, 0, -393216, 6, 0, -327680, 6, 0, -262144, 6, 0, -196608, 6, 0, -131072, 6, 0, -65536, 6, 0, 0, 6, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 5, 6, 0, 6, 6, 0, 7, 6, 0, 8, 6, 0, 9, 6, 0, 10, 6, 0, 11, 6, 0, 12, 6, 0, 13, 6, 0, 14, 6, 0, 15, 6, 0, 18, 6, 0, 19, 6, 0, 20, 6, 0, 65536, 6, 0, 65537, 6, 0, 65538, 6, 0, 65539, 6, 0, 65540, 6, 0, 65541, 6, 0, 65542, 6, 0, 65543, 6, 0, 65544, 6, 0, 65545, 6, 0, 65546, 6, 0, 65547, 6, 0, 65548, 6, 0, 65549, 6, 0, 65550, 6, 0, 65551, 6, 0, 131072, 6, 0, 131073, 6, 0, 131074, 6, 0, 131075, 6, 0, 131076, 6, 0, 131077, 6, 0, 131078, 6, 0, 131079, 6, 0, 131080, 6, 0, 131081, 6, 0, 131082, 6, 0, 131083, 6, 0, 131084, 6, 0, 131085, 6, 0, 131086, 6, 0, 131087, 6, 0, 196608, 6, 0, 196609, 6, 0, 196610, 6, 0, 196611, 6, 0, 196612, 6, 0, 196613, 6, 0, 196614, 6, 0, 196615, 6, 0, 196616, 6, 0, 196617, 6, 0, 196618, 6, 0, 196619, 6, 0, 196620, 6, 0, 196621, 6, 0, 196622, 6, 0, 196623, 6, 0, 262144, 6, 0, 262145, 6, 0, 262146, 6, 0, 262147, 6, 0, 262148, 6, 0, 262149, 6, 0, 262150, 6, 0, 262151, 6, 0, 262152, 6, 0, 262153, 6, 0, 262154, 6, 0, 262155, 6, 0, 262156, 6, 0, 262157, 6, 0, 262158, 6, 0, 262159, 6, 0 )
 
-[node name="death zone" type="Area2D" parent="."]
-collision_layer = 4
+[node name="collectibles" type="Node2D" parent="."]
+position = Vector2( 31.1479, -96.2752 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="death zone"]
-position = Vector2( 2114.72, 538.782 )
-shape = SubResource( 1 )
+[node name="collectible" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 392.852, 72.2751 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible2" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 456.852, 72.2751 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible3" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 488.852, 72.2751 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible4" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 424.852, 72.2751 )
+scale = Vector2( 0.2, 0.2 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 64.4888, -27.8454 )
+position = Vector2( 88, -24 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 current = true
@@ -42,33 +69,16 @@ drag_margin_v_enabled = true
 drag_margin_left = 0.25
 drag_margin_right = 0.25
 editor_draw_limits = true
-
-[node name="collectibles" type="Node2D" parent="."]
-
-[node name="collectible" parent="collectibles" instance=ExtResource( 4 )]
-position = Vector2( 429.734, -27.7881 )
-scale = Vector2( 0.2, 0.2 )
-
-[node name="collectible2" parent="collectibles" instance=ExtResource( 4 )]
-position = Vector2( 323.668, -27.0809 )
-scale = Vector2( 0.2, 0.2 )
-
-[node name="collectible3" parent="collectibles" instance=ExtResource( 4 )]
-position = Vector2( 654.594, -31.3236 )
-scale = Vector2( 0.2, 0.2 )
-
-[node name="collectible4" parent="collectibles" instance=ExtResource( 4 )]
-position = Vector2( 535.093, -28.4951 )
-scale = Vector2( 0.2, 0.2 )
+editor_draw_drag_margin = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 6 )
 
 [node name="TextureRect" type="TextureRect" parent="HUD"]
-margin_left = 27.861
-margin_top = 558.399
-margin_right = 40.861
-margin_bottom = 571.399
+margin_left = 14.3792
+margin_top = 568.072
+margin_right = 27.3792
+margin_bottom = 581.072
 texture = ExtResource( 5 )
 expand = true
 __meta__ = {
@@ -76,20 +86,20 @@ __meta__ = {
 }
 
 [node name="x" type="Label" parent="HUD"]
-margin_left = 50.0
-margin_top = 558.0
-margin_right = 60.0
-margin_bottom = 572.0
+margin_left = 36.5182
+margin_top = 567.673
+margin_right = 46.5182
+margin_bottom = 581.673
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Collectibles" type="Label" parent="HUD"]
-margin_left = 64.3315
-margin_top = 558.669
-margin_right = 103.331
-margin_bottom = 572.669
+margin_left = 50.8497
+margin_top = 568.342
+margin_right = 89.8492
+margin_bottom = 582.342
 text = "##"
 __meta__ = {
 "_edit_use_anchors_": false

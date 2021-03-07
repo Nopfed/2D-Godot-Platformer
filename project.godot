@@ -15,12 +15,14 @@ _global_script_class_icons={
 
 [application]
 
-config/name="2D Platformer"
-config/icon="res://icon.png"
+config/name="2D simple platformer"
+config/description="A simple 2D platformer game."
+run/main_scene="res://Title Screen.tscn"
+config/icon="res://Assets/Sprites/Misc/player.png"
 
 [display]
 
-window/size/resizable=false
+window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
 [input]
@@ -66,6 +68,8 @@ jump={
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/2d/use_pixel_snap=true
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.00784314, 0.176471, 0.0980392, 1 )
 environment/default_environment="res://default_env.tres"
