@@ -5,7 +5,7 @@
 [ext_resource path="res://Scripts/Play Button.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/settings button.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Audio/SFX/UI boop 1.wav" type="AudioStream" id=5]
-[ext_resource path="res://Assets/Audio/SFX/UI boop 2.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio/SFX/UI boop 2 short.wav" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -26,7 +26,7 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1024.0
+margin_right = 1088.0
 margin_bottom = 600.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -34,10 +34,10 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="."]
-margin_left = 152.0
-margin_top = 40.0
-margin_right = 872.0
-margin_bottom = 145.0
+margin_left = 184.0
+margin_top = 56.0
+margin_right = 904.0
+margin_bottom = 161.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.0313726, 0.721569, 0.231373, 1 )
 text = "2D simple platformer"
@@ -48,9 +48,9 @@ __meta__ = {
 }
 
 [node name="Play Button" type="Button" parent="."]
-margin_left = 424.0
+margin_left = 456.0
 margin_top = 256.0
-margin_right = 596.0
+margin_right = 628.0
 margin_bottom = 310.0
 focus_mode = 0
 custom_fonts/font = SubResource( 2 )
@@ -71,14 +71,14 @@ stream = ExtResource( 5 )
 volume_db = -15.898
 
 [node name="boop2" type="AudioStreamPlayer" parent="Play Button"]
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 volume_db = -15.0
 
 [node name="settings button" type="Button" parent="."]
 visible = false
-margin_left = 424.0
+margin_left = 456.0
 margin_top = 312.0
-margin_right = 596.0
+margin_right = 628.0
 margin_bottom = 366.0
 focus_mode = 0
 custom_fonts/font = SubResource( 2 )
@@ -100,13 +100,13 @@ stream = ExtResource( 5 )
 volume_db = -15.898
 
 [node name="boop2" type="AudioStreamPlayer" parent="settings button"]
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 volume_db = -15.0
 
 [node name="exit button" type="Button" parent="."]
-margin_left = 424.0
+margin_left = 456.0
 margin_top = 368.0
-margin_right = 596.0
+margin_right = 628.0
 margin_bottom = 422.0
 focus_mode = 0
 custom_fonts/font = SubResource( 2 )
@@ -127,7 +127,7 @@ stream = ExtResource( 5 )
 volume_db = -15.898
 
 [node name="boop2" type="AudioStreamPlayer" parent="exit button"]
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 volume_db = -15.0
 [connection signal="mouse_entered" from="Play Button" to="Play Button" method="_on_Play_Button_mouse_entered"]
 [connection signal="pressed" from="Play Button" to="Play Button" method="_on_Play_Button_pressed"]

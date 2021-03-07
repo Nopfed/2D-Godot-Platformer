@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/UI boop 2 short.wav-3a41b173a7bd4c2ee5a77f855b7ba85c.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/UI boop 2 short.wav"
+dest_files=[ "res://.import/UI boop 2 short.wav-3a41b173a7bd4c2ee5a77f855b7ba85c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
