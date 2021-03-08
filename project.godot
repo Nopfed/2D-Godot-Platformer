@@ -61,6 +61,7 @@ jump={
 2d_physics/layer_3="death zone"
 2d_physics/layer_4="collectible"
 2d_physics/layer_5="hazards"
+2d_physics/layer_6="win zone"
 
 [rendering]
 

@@ -28,6 +28,9 @@ func _physics_process(_delta):
 		v.y = JUMP
 		$"Jump Sound".play()
 	
+	if Input.is_action_just_released("jump") and v.y < -100:
+		v.y = -100
+	
 	#calculate movement and floor direction
 	v = move_and_slide(v, Vector2.UP)
 	
@@ -43,3 +46,7 @@ func _on_death_zone_body_entered(body):
 	get_tree().change_scene("res://Scenes/level 0.tscn")
 
 
+func _on_win_zone_body_entered(body):
+	$"win sound".play()
+	yield($"win sound", "finished")
+	get_tree().change_scene("res://Scenes/level 1.tscn")
