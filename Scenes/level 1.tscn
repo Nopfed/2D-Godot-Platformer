@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://world tile set.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
@@ -6,7 +6,9 @@
 [ext_resource path="res://Scenes/collectible.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/World Tiles/motherboard gold.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/moving platform.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Audio/SFX/collect 1.wav" type="AudioStream" id=8]
+[ext_resource path="res://Scenes/death zone.tscn" type="PackedScene" id=9]
 
 [node name="level 1" type="Node2D"]
 
@@ -23,7 +25,7 @@ position = Vector2( 200.852, 0.275208 )
 scale = Vector2( 0.2, 0.2 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 160, -176 )
+position = Vector2( 168, -160 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 current = true
@@ -36,11 +38,16 @@ drag_margin_right = 0.25
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
+[node name="death zone" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1288, 168 )
+scale = Vector2( 35, 5 )
+collision_layer = 4
+
 [node name="Tiles Solid" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -458752, 6, 0, -458751, 6, 0, -458750, 6, 0, -458749, 6, 0, -393216, 6, 0, -393215, 6, 0, -393214, 6, 0, -393213, 6, 0, -327680, 6, 0, -327679, 6, 0, -327678, 6, 0, -327677, 6, 0, -262144, 6, 0, -262143, 6, 0, -196608, 6, 0, -196607, 6, 0, -131072, 6, 0, -131071, 6, 0, -65536, 6, 0, -65535, 6, 0, -65534, 6, 0, -65533, 6, 0, 0, 6, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 65536, 6, 0, 65537, 6, 0, 65538, 6, 0, 65539, 6, 0, 131072, 6, 0, 131073, 6, 0, 131074, 6, 0, 131075, 6, 0, 196608, 6, 0, 196609, 6, 0, 196610, 6, 0, 196611, 6, 0, 262144, 6, 0, 262145, 6, 0, 262146, 6, 0, 262147, 6, 0 )
+tile_data = PoolIntArray( -458752, 6, 0, -458751, 6, 0, -458750, 6, 0, -458749, 6, 0, -458748, 6, 0, -393216, 6, 0, -393215, 6, 0, -393214, 6, 0, -393213, 6, 0, -393212, 6, 0, -327680, 6, 0, -327679, 6, 0, -327678, 6, 0, -327677, 6, 0, -327676, 6, 0, -262144, 6, 0, -196608, 6, 0, -131072, 6, 0, -65536, 6, 0, 0, 6, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 65536, 6, 0, 65537, 6, 0, 65538, 6, 0, 65539, 6, 0, 65540, 6, 0, 131072, 6, 0, 131073, 6, 0, 131074, 6, 0, 131075, 6, 0, 131076, 6, 0, 196608, 6, 0, 196609, 6, 0, 196610, 6, 0, 196611, 6, 0, 196612, 6, 0, 262144, 6, 0, 262145, 6, 0, 262146, 6, 0, 262147, 6, 0, 262148, 6, 0 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 6 )
@@ -79,4 +86,14 @@ __meta__ = {
 [node name="collectSound" type="AudioStreamPlayer" parent="HUD"]
 stream = ExtResource( 8 )
 volume_db = -15.0
+
+[node name="moving platform" type="Node2D" parent="."]
+position = Vector2( 448, -16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platform" instance=ExtResource( 7 )]
+scale = Vector2( 2, 0.5 )
 [connection signal="collectible_collected" from="collectibles/collectible" to="HUD" method="_on_collectible_collected"]
+[connection signal="body_entered" from="death zone" to="player" method="_on_death_zone_body_entered"]

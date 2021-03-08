@@ -43,7 +43,7 @@ func _physics_process(_delta):
 func _on_death_zone_body_entered(body):
 	$"death sound".play()
 	yield($"death sound", "finished")
-	get_tree().change_scene("res://Scenes/level 0.tscn")
+	get_tree().reload_current_scene()
 
 
 func _on_win_zone_body_entered(body):
