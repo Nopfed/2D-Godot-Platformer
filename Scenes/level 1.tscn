@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://world tile set.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,15 @@
 [ext_resource path="res://Scenes/moving platform.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Audio/SFX/collect 1.wav" type="AudioStream" id=8]
 [ext_resource path="res://Scenes/death zone.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/win zone.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scripts/win zone 1.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Fonts/DotGothic16-Regular.ttf" type="DynamicFontData" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 12 )
 
 [node name="level 1" type="Node2D"]
 
@@ -21,16 +30,777 @@ format = 1
 position = Vector2( 31.1479, -96.2752 )
 
 [node name="collectible" parent="collectibles" instance=ExtResource( 4 )]
-position = Vector2( 200.852, 0.275208 )
+position = Vector2( 152.852, 56.2752 )
 scale = Vector2( 0.2, 0.2 )
 
+[node name="collectible2" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 248.852, 56.2752 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible3" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 392.852, 32.2752 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible4" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 544.852, 8.27518 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible5" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 744.852, -31.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible6" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1000.85, -87.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible7" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1256.85, -175.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible8" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1024.85, -255.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible9" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1144.85, -343.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible10" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1400.85, -375.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible11" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1520.85, -439.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible12" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1520.85, -415.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible13" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1544.85, -439.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible14" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1544.85, -415.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible15" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1568.85, -439.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible16" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1568.85, -415.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible17" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1592.85, -439.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible18" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1592.85, -415.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible19" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1616.85, -439.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible20" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1616.85, -415.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible21" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1840.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible22" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1840.85, -423.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible23" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1864.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible24" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1864.85, -423.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible25" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1888.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible26" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1888.85, -423.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible27" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1912.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible28" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1912.85, -423.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible29" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1936.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible30" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 1936.85, -423.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible31" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2144.85, -471.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible32" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2144.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible33" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2168.85, -471.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible34" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2168.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible35" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2192.85, -471.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible36" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2192.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible37" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2216.85, -471.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible38" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2216.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible39" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2240.85, -471.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible40" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2240.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible41" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2728.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible42" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2728.85, -423.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible43" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2752.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible44" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2752.85, -423.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible45" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2776.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible46" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2776.85, -423.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible47" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2800.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible48" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2800.85, -423.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible49" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2824.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible50" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 2824.85, -423.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible52" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3272.85, -15.7249 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible53" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3272.85, 8.27515 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible54" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3296.85, -15.7249 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible55" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3296.85, 8.27509 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible56" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3320.85, -15.7249 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible57" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3320.85, 8.27509 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible58" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3344.85, -15.7249 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible59" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3344.85, 8.27509 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible60" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3368.85, -15.7249 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible61" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3368.85, 8.27509 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible62" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3392.85, -15.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible63" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3392.85, 8.27518 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible64" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3416.85, -15.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible65" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3416.85, 8.27512 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible66" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3440.85, -15.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible67" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3440.85, 8.27512 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible68" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3464.85, -15.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible69" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3464.85, 8.27512 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible70" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3488.85, -15.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible71" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3488.85, 8.27512 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible82" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3744.85, -39.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible83" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3744.85, -15.7249 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible84" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 4248.85, 8.27521 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible86" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 4528.85, 0.275177 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible87" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 4808.85, 0.275208 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible88" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 5008.85, -47.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible89" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 5296.85, -39.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible90" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 5160.85, -71.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible91" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 5512.85, -63.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible92" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 5672.85, -95.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible93" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 5848.85, -23.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible94" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 5752.85, -23.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible95" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6128.85, -223.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible96" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6152.85, -223.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible97" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6128.85, -247.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible98" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6152.85, -247.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible99" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6232.85, -71.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible100" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6256.85, -71.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible101" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6232.85, -95.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible102" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6256.85, -95.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible103" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6096.85, -399.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible104" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6120.85, -399.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible105" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6096.85, -423.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible106" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6120.85, -423.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible107" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6288.85, -311.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible108" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6312.85, -311.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible109" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6288.85, -335.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible110" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6312.85, -335.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible111" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6360.85, -143.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible112" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6384.85, -143.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible113" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6360.85, -167.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible114" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6384.85, -167.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible115" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6496.85, -423.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible116" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6520.85, -423.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible117" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6496.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible118" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6520.85, -447.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible119" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6520.85, -231.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible120" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6544.85, -231.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible121" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6520.85, -255.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible122" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6544.85, -255.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible123" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6680.85, -367.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible124" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6704.85, -367.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible125" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6680.85, -391.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible126" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6704.85, -391.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible127" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6600.85, -319.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible128" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6624.85, -319.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible129" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6600.85, -343.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible130" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6624.85, -343.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible131" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6640.85, -167.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible132" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6664.85, -167.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible133" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6640.85, -191.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible134" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6664.85, -191.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible135" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6416.85, -255.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible136" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6440.85, -255.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible137" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6416.85, -279.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible138" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6440.85, -279.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible139" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6336.85, -391.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible140" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6360.85, -391.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible141" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6336.85, -415.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible142" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6360.85, -415.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible143" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6768.85, -175.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible144" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6792.85, -175.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible145" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6768.85, -199.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible146" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6792.85, -199.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible147" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6936.85, -79.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible148" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6960.85, -79.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible149" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6936.85, -103.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible150" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6960.85, -103.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible151" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6928.85, -247.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible152" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6952.85, -247.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible153" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6928.85, -271.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible154" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6952.85, -271.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible155" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6864.85, -439.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible156" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6888.85, -439.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible157" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6864.85, -463.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible158" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 6888.85, -463.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible159" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7080.85, -351.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible160" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7104.85, -351.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible161" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7080.85, -375.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible162" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7104.85, -375.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible163" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7216.85, -471.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible164" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7240.85, -471.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible165" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7216.85, -495.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible166" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7240.85, -495.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible167" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7144.85, -175.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible168" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7168.85, -175.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible169" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7144.85, -199.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible170" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7168.85, -199.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible171" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7048.85, -151.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible172" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7072.85, -151.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible173" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7048.85, -175.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible174" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7072.85, -175.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible175" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7272.85, -103.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible176" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7296.85, -103.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible177" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7272.85, -127.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible178" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7296.85, -127.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible179" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7272.85, -287.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible180" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7296.85, -287.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible181" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7272.85, -311.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible182" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7296.85, -311.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible183" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7360.85, -399.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible184" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7384.85, -399.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible185" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7360.85, -423.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible186" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7384.85, -423.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible187" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7392.85, -175.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible188" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7416.85, -175.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible189" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7392.85, -199.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible190" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 7416.85, -199.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible85" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 4080.85, 8.27505 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible72" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3328.85, -63.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible73" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3328.85, -39.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible74" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3352.85, -63.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible75" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3352.85, -39.7249 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible76" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3376.85, -63.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible77" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3376.85, -39.7249 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible78" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3400.85, -63.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible79" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3400.85, -39.7249 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible80" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3424.85, -63.7248 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible81" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3424.85, -39.7249 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="collectible51" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 3048.85, -407.725 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="win zone" parent="." instance=ExtResource( 10 )]
+position = Vector2( 7904, -32 )
+script = ExtResource( 11 )
+
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 168, -160 )
+position = Vector2( 104, -88 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 current = true
 limit_left = 0
 limit_bottom = 289
+limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 drag_margin_left = 0.25
@@ -38,25 +808,416 @@ drag_margin_right = 0.25
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
+[node name="moving platforms" type="Node2D" parent="."]
+
+[node name="moving platform" type="Node2D" parent="moving platforms"]
+position = Vector2( 448, -16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform" instance=ExtResource( 7 )]
+scale = Vector2( 2, 0.5 )
+
+[node name="moving platform3" type="Node2D" parent="moving platforms"]
+position = Vector2( 1000, -120 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform3" instance=ExtResource( 7 )]
+scale = Vector2( 2, 0.5 )
+
+[node name="moving platform5" type="Node2D" parent="moving platforms"]
+position = Vector2( 1024, -304 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform5" instance=ExtResource( 7 )]
+scale = Vector2( 2, 0.5 )
+
+[node name="moving platform7" type="Node2D" parent="moving platforms"]
+position = Vector2( 1600, -472 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform7" instance=ExtResource( 7 )]
+scale = Vector2( 2, 0.5 )
+
+[node name="moving platform9" type="Node2D" parent="moving platforms"]
+position = Vector2( 2224, -472 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform9" instance=ExtResource( 7 )]
+scale = Vector2( 2, 0.5 )
+
+[node name="moving platform11" type="Node2D" parent="moving platforms"]
+position = Vector2( 2816, -472 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform11" instance=ExtResource( 7 )]
+scale = Vector2( 2, 0.5 )
+
+[node name="moving platform12" type="Node2D" parent="moving platforms"]
+position = Vector2( 3664, -48 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform12" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform2" type="Node2D" parent="moving platforms"]
+position = Vector2( 744, -64 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform2" instance=ExtResource( 7 )]
+scale = Vector2( 2, 0.5 )
+
+[node name="moving platform4" type="Node2D" parent="moving platforms"]
+position = Vector2( 1328, -200 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform4" instance=ExtResource( 7 )]
+scale = Vector2( 2, 0.5 )
+
+[node name="moving platform6" type="Node2D" parent="moving platforms"]
+position = Vector2( 1344, -392 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform6" instance=ExtResource( 7 )]
+scale = Vector2( 2, 0.5 )
+
+[node name="moving platform8" type="Node2D" parent="moving platforms"]
+position = Vector2( 1920, -472 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform8" instance=ExtResource( 7 )]
+scale = Vector2( 2, 0.5 )
+
+[node name="moving platform10" type="Node2D" parent="moving platforms"]
+position = Vector2( 2528, -472 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform10" instance=ExtResource( 7 )]
+scale = Vector2( 2, 0.5 )
+
+[node name="moving platform13" type="Node2D" parent="moving platforms"]
+position = Vector2( 3888, -48 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform13" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform14" type="Node2D" parent="moving platforms"]
+position = Vector2( 4568, -48 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform14" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform15" type="Node2D" parent="moving platforms"]
+position = Vector2( 4856, -48 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform15" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform16" type="Node2D" parent="moving platforms"]
+position = Vector2( 5040, -88 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform16" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform17" type="Node2D" parent="moving platforms"]
+position = Vector2( 5328, -88 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform17" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform18" type="Node2D" parent="moving platforms"]
+position = Vector2( 5544, -88 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform18" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform19" type="Node2D" parent="moving platforms"]
+position = Vector2( 5832, -88 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform19" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform20" type="Node2D" parent="moving platforms"]
+position = Vector2( 6016, -88 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform20" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform21" type="Node2D" parent="moving platforms"]
+position = Vector2( 6272, -104 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform21" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform22" type="Node2D" parent="moving platforms"]
+position = Vector2( 6168, -264 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform22" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform23" type="Node2D" parent="moving platforms"]
+position = Vector2( 6400, -192 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform23" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform24" type="Node2D" parent="moving platforms"]
+position = Vector2( 6144, -456 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform24" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform25" type="Node2D" parent="moving platforms"]
+position = Vector2( 6336, -368 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform25" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform26" type="Node2D" parent="moving platforms"]
+position = Vector2( 6664, -128 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform26" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform27" type="Node2D" parent="moving platforms"]
+position = Vector2( 6560, -288 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform27" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform28" type="Node2D" parent="moving platforms"]
+position = Vector2( 6792, -216 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform28" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform29" type="Node2D" parent="moving platforms"]
+position = Vector2( 6536, -480 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform29" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform30" type="Node2D" parent="moving platforms"]
+position = Vector2( 6728, -392 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform30" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform31" type="Node2D" parent="moving platforms"]
+position = Vector2( 7064, -120 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform31" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform32" type="Node2D" parent="moving platforms"]
+position = Vector2( 6960, -280 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform32" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform33" type="Node2D" parent="moving platforms"]
+position = Vector2( 7192, -208 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform33" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform34" type="Node2D" parent="moving platforms"]
+position = Vector2( 6936, -472 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform34" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform35" type="Node2D" parent="moving platforms"]
+position = Vector2( 7128, -384 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform35" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform36" type="Node2D" parent="moving platforms"]
+position = Vector2( 7400, -160 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform36" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform37" type="Node2D" parent="moving platforms"]
+position = Vector2( 7296, -320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform37" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform38" type="Node2D" parent="moving platforms"]
+position = Vector2( 7528, -248 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform38" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform39" type="Node2D" parent="moving platforms"]
+position = Vector2( 7272, -512 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform39" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
+[node name="moving platform40" type="Node2D" parent="moving platforms"]
+position = Vector2( 7464, -424 )
+rotation = -3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="platform" parent="moving platforms/moving platform40" instance=ExtResource( 7 )]
+scale = Vector2( 1.1, 0.5 )
+
 [node name="death zone" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1288, 168 )
-scale = Vector2( 35, 5 )
-collision_layer = 4
+position = Vector2( 1632, 176 )
+scale = Vector2( 50, 5 )
+
+[node name="death zone2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3784, 192 )
+scale = Vector2( 10, 6 )
+
+[node name="death zone3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 6032, 192 )
+scale = Vector2( 50, 6 )
 
 [node name="Tiles Solid" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -458752, 6, 0, -458751, 6, 0, -458750, 6, 0, -458749, 6, 0, -458748, 6, 0, -393216, 6, 0, -393215, 6, 0, -393214, 6, 0, -393213, 6, 0, -393212, 6, 0, -327680, 6, 0, -327679, 6, 0, -327678, 6, 0, -327677, 6, 0, -327676, 6, 0, -262144, 6, 0, -196608, 6, 0, -131072, 6, 0, -65536, 6, 0, 0, 6, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 65536, 6, 0, 65537, 6, 0, 65538, 6, 0, 65539, 6, 0, 65540, 6, 0, 131072, 6, 0, 131073, 6, 0, 131074, 6, 0, 131075, 6, 0, 131076, 6, 0, 196608, 6, 0, 196609, 6, 0, 196610, 6, 0, 196611, 6, 0, 196612, 6, 0, 262144, 6, 0, 262145, 6, 0, 262146, 6, 0, 262147, 6, 0, 262148, 6, 0 )
+tile_data = PoolIntArray( -1245065, 6, 0, -1245064, 6, 0, -1245063, 6, 0, -1245062, 6, 0, -1245061, 6, 0, -1245060, 6, 0, -1245059, 6, 0, -1245058, 6, 0, -1245057, 6, 0, -1245056, 6, 0, -1245055, 6, 0, -1245054, 6, 0, -1245053, 6, 0, -1245052, 6, 0, -1245051, 6, 0, -1245050, 6, 0, -1245049, 6, 0, -1245048, 6, 0, -1179529, 6, 0, -1179528, 6, 0, -1179527, 6, 0, -1179526, 6, 0, -1179525, 6, 0, -1179524, 6, 0, -1179523, 6, 0, -1179522, 6, 0, -1179521, 6, 0, -1179520, 6, 0, -1179519, 6, 0, -1179518, 6, 0, -1179517, 6, 0, -1179516, 6, 0, -1179515, 6, 0, -1179514, 6, 0, -1179513, 6, 0, -1179512, 6, 0, -1113993, 6, 0, -1113992, 6, 0, -1113991, 6, 0, -1113990, 6, 0, -1113989, 6, 0, -1113988, 6, 0, -1113987, 6, 0, -1113986, 6, 0, -1113985, 6, 0, -1113984, 6, 0, -1113983, 6, 0, -1113982, 6, 0, -1113981, 6, 0, -1113980, 6, 0, -1113979, 6, 0, -1113978, 6, 0, -1113977, 6, 0, -1113976, 6, 0, -1048457, 6, 0, -1048456, 6, 0, -1048455, 6, 0, -1048454, 6, 0, -1048453, 6, 0, -1048452, 6, 0, -1048451, 6, 0, -1048450, 6, 0, -1048449, 6, 0, -1048448, 6, 0, -1048447, 6, 0, -1048446, 6, 0, -1048445, 6, 0, -1048444, 6, 0, -1048443, 6, 0, -1048442, 6, 0, -1048441, 6, 0, -1048440, 6, 0, -982921, 6, 0, -982920, 6, 0, -982919, 6, 0, -982918, 6, 0, -982917, 6, 0, -982916, 6, 0, -982915, 6, 0, -982914, 6, 0, -982913, 6, 0, -982912, 6, 0, -982911, 6, 0, -982910, 6, 0, -982909, 6, 0, -982908, 6, 0, -982907, 6, 0, -982906, 6, 0, -982905, 6, 0, -982904, 6, 0, -917385, 6, 0, -917384, 6, 0, -917383, 6, 0, -917382, 6, 0, -917381, 6, 0, -917380, 6, 0, -917379, 6, 0, -917378, 6, 0, -917377, 6, 0, -917376, 6, 0, -917375, 6, 0, -917374, 6, 0, -917373, 6, 0, -917372, 6, 0, -917371, 6, 0, -917370, 6, 0, -917369, 6, 0, -917368, 6, 0, -851849, 6, 0, -851848, 6, 0, -851847, 6, 0, -851846, 6, 0, -851845, 6, 0, -851844, 6, 0, -851843, 6, 0, -851842, 6, 0, -851841, 6, 0, -851840, 6, 0, -851839, 6, 0, -851838, 6, 0, -851837, 6, 0, -851836, 6, 0, -851835, 6, 0, -851834, 6, 0, -851833, 6, 0, -851832, 6, 0, -786313, 6, 0, -786312, 6, 0, -786311, 6, 0, -786310, 6, 0, -786309, 6, 0, -786308, 6, 0, -786307, 6, 0, -786306, 6, 0, -786305, 6, 0, -786304, 6, 0, -786303, 6, 0, -786302, 6, 0, -786301, 6, 0, -786300, 6, 0, -786299, 6, 0, -786298, 6, 0, -786297, 6, 0, -786296, 6, 0, -720777, 6, 0, -720776, 6, 0, -720775, 6, 0, -720774, 6, 0, -720773, 6, 0, -720772, 6, 0, -720771, 6, 0, -720770, 6, 0, -720769, 6, 0, -720768, 6, 0, -720767, 6, 0, -720766, 6, 0, -720765, 6, 0, -720764, 6, 0, -720763, 6, 0, -720762, 6, 0, -720761, 6, 0, -720760, 6, 0, -655241, 6, 0, -655240, 6, 0, -655239, 6, 0, -655238, 6, 0, -655237, 6, 0, -655236, 6, 0, -655235, 6, 0, -655234, 6, 0, -655233, 6, 0, -655232, 6, 0, -655231, 6, 0, -655230, 6, 0, -655229, 6, 0, -655228, 6, 0, -655227, 6, 0, -655226, 6, 0, -655225, 6, 0, -655224, 6, 0, -589824, 6, 0, -589823, 6, 0, -589822, 6, 0, -589821, 6, 0, -589820, 6, 0, -589705, 6, 0, -589704, 6, 0, -589703, 6, 0, -589702, 6, 0, -589701, 6, 0, -589700, 6, 0, -589699, 6, 0, -589698, 6, 0, -589697, 6, 0, -589696, 6, 0, -589695, 6, 0, -589694, 6, 0, -589693, 6, 0, -589692, 6, 0, -589691, 6, 0, -589690, 6, 0, -589689, 6, 0, -589688, 6, 0, -524288, 6, 0, -524287, 6, 0, -524286, 6, 0, -524285, 6, 0, -524284, 6, 0, -524161, 6, 0, -524160, 6, 0, -524159, 6, 0, -524158, 6, 0, -524157, 6, 0, -524156, 6, 0, -524155, 6, 0, -524154, 6, 0, -524153, 6, 0, -524152, 6, 0, -458752, 6, 0, -458751, 6, 0, -458750, 6, 0, -458749, 6, 0, -458748, 6, 0, -458625, 6, 0, -458624, 6, 0, -458623, 6, 0, -458622, 6, 0, -458621, 6, 0, -458620, 6, 0, -458619, 6, 0, -458618, 6, 0, -458617, 6, 0, -458616, 6, 0, -393216, 6, 0, -393215, 6, 0, -393214, 6, 0, -393213, 6, 0, -393212, 6, 0, -393089, 6, 0, -393088, 6, 0, -393087, 6, 0, -393086, 6, 0, -393085, 6, 0, -393084, 6, 0, -393083, 6, 0, -393082, 6, 0, -393081, 6, 0, -393080, 6, 0, -327680, 6, 0, -327679, 6, 0, -327678, 6, 0, -327677, 6, 0, -327676, 6, 0, -327553, 6, 0, -327552, 6, 0, -327551, 6, 0, -327550, 6, 0, -327549, 6, 0, -327548, 6, 0, -327547, 6, 0, -327546, 6, 0, -327545, 6, 0, -327544, 6, 0, -262144, 6, 0, -262017, 6, 0, -262016, 6, 0, -262015, 6, 0, -262014, 6, 0, -262013, 6, 0, -262012, 6, 0, -262011, 6, 0, -262010, 6, 0, -262009, 6, 0, -262008, 6, 0, -196608, 6, 0, -196481, 6, 0, -196480, 6, 0, -196479, 6, 0, -196478, 6, 0, -196477, 6, 0, -196476, 6, 0, -196475, 6, 0, -196474, 6, 0, -196473, 6, 0, -196472, 6, 0, -131072, 6, 0, -130945, 6, 0, -130944, 6, 0, -130943, 6, 0, -130942, 6, 0, -130941, 6, 0, -130940, 6, 0, -130939, 6, 0, -130938, 6, 0, -130937, 6, 0, -130936, 6, 0, -65536, 6, 0, -65486, 6, 0, -65485, 6, 0, -65484, 6, 0, -65483, 6, 0, -65482, 6, 0, -65481, 6, 0, -65474, 6, 0, -65473, 6, 0, -65472, 6, 0, -65471, 6, 0, -65470, 6, 0, -65469, 6, 0, -65468, 6, 0, -65467, 6, 0, -65417, 6, 0, -65416, 6, 0, -65415, 6, 0, -65411, 6, 0, -65410, 6, 0, -65409, 6, 0, -65408, 6, 0, -65407, 6, 0, -65406, 6, 0, -65405, 6, 0, -65404, 6, 0, -65403, 6, 0, -65402, 6, 0, -65401, 6, 0, -65400, 6, 0, 0, 6, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 50, 6, 0, 51, 6, 0, 52, 6, 0, 53, 6, 0, 54, 6, 0, 55, 6, 0, 62, 6, 0, 63, 6, 0, 64, 6, 0, 65, 6, 0, 66, 6, 0, 67, 6, 0, 68, 6, 0, 69, 6, 0, 119, 6, 0, 120, 6, 0, 121, 6, 0, 122, 4, 0, 123, 4, 0, 124, 4, 0, 125, 6, 0, 126, 6, 0, 127, 6, 0, 128, 6, 0, 129, 6, 0, 130, 6, 0, 131, 6, 0, 132, 6, 0, 133, 6, 0, 134, 6, 0, 135, 6, 0, 136, 6, 0, 65536, 6, 0, 65537, 6, 0, 65538, 6, 0, 65539, 6, 0, 65540, 6, 0, 65586, 6, 0, 65587, 6, 0, 65588, 6, 0, 65589, 6, 0, 65590, 6, 0, 65591, 6, 0, 65598, 6, 0, 65599, 6, 0, 65600, 6, 0, 65601, 6, 0, 65602, 6, 0, 65603, 6, 0, 65604, 6, 0, 65605, 6, 0, 65655, 6, 0, 65656, 6, 0, 65657, 6, 0, 65658, 6, 0, 65659, 6, 0, 65660, 6, 0, 65661, 6, 0, 65662, 6, 0, 65663, 6, 0, 65664, 6, 0, 65665, 6, 0, 65666, 6, 0, 65667, 6, 0, 65668, 6, 0, 65669, 6, 0, 65670, 6, 0, 65671, 6, 0, 65672, 6, 0, 131072, 6, 0, 131073, 6, 0, 131074, 6, 0, 131075, 6, 0, 131076, 6, 0, 131122, 6, 0, 131123, 6, 0, 131124, 6, 0, 131125, 6, 0, 131126, 6, 0, 131127, 6, 0, 131134, 6, 0, 131135, 6, 0, 131136, 6, 0, 131137, 6, 0, 131138, 6, 0, 131139, 6, 0, 131140, 6, 0, 131141, 6, 0, 131191, 6, 0, 131192, 6, 0, 131193, 6, 0, 131194, 6, 0, 131195, 6, 0, 131196, 6, 0, 131197, 6, 0, 131198, 6, 0, 131199, 6, 0, 131200, 6, 0, 131201, 6, 0, 131202, 6, 0, 131203, 6, 0, 131204, 6, 0, 131205, 6, 0, 131206, 6, 0, 131207, 6, 0, 131208, 6, 0, 196608, 6, 0, 196609, 6, 0, 196610, 6, 0, 196611, 6, 0, 196612, 6, 0, 196658, 6, 0, 196659, 6, 0, 196660, 6, 0, 196661, 6, 0, 196662, 6, 0, 196663, 6, 0, 196670, 6, 0, 196671, 6, 0, 196672, 6, 0, 196673, 6, 0, 196674, 6, 0, 196675, 6, 0, 196676, 6, 0, 196677, 6, 0, 196727, 6, 0, 196728, 6, 0, 196729, 6, 0, 196730, 6, 0, 196731, 6, 0, 196732, 6, 0, 196733, 6, 0, 196734, 6, 0, 196735, 6, 0, 196736, 6, 0, 196737, 6, 0, 196738, 6, 0, 196739, 6, 0, 196740, 6, 0, 196741, 6, 0, 196742, 6, 0, 196743, 6, 0, 196744, 6, 0, 262144, 6, 0, 262145, 6, 0, 262146, 6, 0, 262147, 6, 0, 262148, 6, 0, 262194, 6, 0, 262195, 6, 0, 262196, 6, 0, 262197, 6, 0, 262198, 6, 0, 262199, 6, 0, 262206, 6, 0, 262207, 6, 0, 262208, 6, 0, 262209, 6, 0, 262210, 6, 0, 262211, 6, 0, 262212, 6, 0, 262213, 6, 0, 262263, 6, 0, 262264, 6, 0, 262265, 6, 0, 262266, 6, 0, 262267, 6, 0, 262268, 6, 0, 262269, 6, 0, 262270, 6, 0, 262271, 6, 0, 262272, 6, 0, 262273, 6, 0, 262274, 6, 0, 262275, 6, 0, 262276, 6, 0, 262277, 6, 0, 262278, 6, 0, 262279, 6, 0, 262280, 6, 0, 327680, 6, 0, 327681, 6, 0, 327682, 6, 0, 327683, 6, 0, 327684, 6, 0, 327685, 6, 0, 327686, 6, 0, 327687, 6, 0, 327688, 6, 0, 327689, 6, 0, 327690, 6, 0, 327691, 6, 0, 327692, 6, 0, 327693, 6, 0, 327694, 6, 0, 327695, 6, 0, 327696, 6, 0, 327697, 6, 0, 327698, 6, 0, 327699, 6, 0, 327700, 6, 0, 327701, 6, 0, 327702, 6, 0, 327703, 6, 0, 327704, 6, 0, 327705, 6, 0, 327706, 6, 0, 327707, 6, 0, 327708, 6, 0, 327709, 6, 0, 327710, 6, 0, 327711, 6, 0, 327712, 6, 0, 327713, 6, 0, 327714, 6, 0, 327715, 6, 0, 327716, 6, 0, 327717, 6, 0, 327718, 6, 0, 327719, 6, 0, 327720, 6, 0, 327721, 6, 0, 327722, 6, 0, 327723, 6, 0, 327724, 6, 0, 327725, 6, 0, 327726, 6, 0, 327727, 6, 0, 327728, 6, 0, 327729, 6, 0, 327730, 6, 0, 327731, 6, 0, 327732, 6, 0, 327733, 6, 0, 327734, 6, 0, 327735, 6, 0, 327736, 6, 0, 327737, 6, 0, 327738, 6, 0, 327739, 6, 0, 327740, 6, 0, 327741, 6, 0, 327742, 6, 0, 327743, 6, 0, 327744, 6, 0, 327745, 6, 0, 327746, 6, 0, 327747, 6, 0, 327748, 6, 0, 327749, 6, 0, 327750, 6, 0, 327751, 6, 0, 327752, 6, 0, 327753, 6, 0, 327754, 6, 0, 327755, 6, 0, 327756, 6, 0, 327757, 6, 0, 327758, 6, 0, 327759, 6, 0, 327760, 6, 0, 327761, 6, 0, 327762, 6, 0, 327763, 6, 0, 327764, 6, 0, 327765, 6, 0, 327766, 6, 0, 327767, 6, 0, 327768, 6, 0, 327769, 6, 0, 327770, 6, 0, 327771, 6, 0, 327772, 6, 0, 327773, 6, 0, 327774, 6, 0, 327775, 6, 0, 327776, 6, 0, 327777, 6, 0, 327778, 6, 0, 327779, 6, 0, 327780, 6, 0, 327781, 6, 0, 327782, 6, 0, 327783, 6, 0, 327784, 6, 0, 327785, 6, 0, 327786, 6, 0, 327787, 6, 0, 327788, 6, 0, 327789, 6, 0, 327790, 6, 0, 327791, 6, 0, 327792, 6, 0, 327793, 6, 0, 327794, 6, 0, 327795, 6, 0, 327796, 6, 0, 327797, 6, 0, 327798, 6, 0, 327799, 6, 0, 327800, 6, 0, 327801, 6, 0, 327802, 6, 0, 327803, 6, 0, 327804, 6, 0, 327805, 6, 0, 327806, 6, 0, 327807, 6, 0, 327808, 6, 0, 327809, 6, 0, 327810, 6, 0, 327811, 6, 0, 327812, 6, 0, 327813, 6, 0, 327814, 6, 0, 327815, 6, 0, 327816, 6, 0 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 6 )
 
 [node name="TextureRect" type="TextureRect" parent="HUD"]
-margin_left = 14.3792
-margin_top = 568.072
-margin_right = 27.3792
-margin_bottom = 581.072
+margin_left = 16.0
+margin_top = 568.0
+margin_right = 29.0
+margin_bottom = 581.0
+rect_rotation = 45.0
 texture = ExtResource( 5 )
 expand = true
 __meta__ = {
@@ -64,20 +1225,22 @@ __meta__ = {
 }
 
 [node name="x" type="Label" parent="HUD"]
-margin_left = 36.5182
-margin_top = 567.673
-margin_right = 46.5182
-margin_bottom = 581.673
+margin_left = 28.0
+margin_top = 563.0
+margin_right = 38.0
+margin_bottom = 577.0
+custom_fonts/font = SubResource( 1 )
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Collectibles" type="Label" parent="HUD"]
-margin_left = 50.8497
-margin_top = 568.342
-margin_right = 89.8492
-margin_bottom = 582.342
+margin_left = 42.0
+margin_top = 565.0
+margin_right = 80.9995
+margin_bottom = 579.0
+custom_fonts/font = SubResource( 2 )
 text = "##"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -86,14 +1249,197 @@ __meta__ = {
 [node name="collectSound" type="AudioStreamPlayer" parent="HUD"]
 stream = ExtResource( 8 )
 volume_db = -15.0
-
-[node name="moving platform" type="Node2D" parent="."]
-position = Vector2( 448, -16 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="platform" parent="moving platform" instance=ExtResource( 7 )]
-scale = Vector2( 2, 0.5 )
 [connection signal="collectible_collected" from="collectibles/collectible" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible2" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible3" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible4" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible5" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible6" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible7" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible8" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible9" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible10" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible11" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible12" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible13" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible14" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible15" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible16" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible17" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible18" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible19" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible20" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible21" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible22" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible23" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible24" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible25" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible26" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible27" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible28" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible29" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible30" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible31" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible32" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible33" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible34" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible35" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible36" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible37" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible38" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible39" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible40" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible41" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible42" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible43" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible44" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible45" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible46" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible47" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible48" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible49" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible50" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible52" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible53" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible54" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible55" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible56" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible57" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible58" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible59" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible60" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible61" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible62" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible63" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible64" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible65" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible66" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible67" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible68" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible69" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible70" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible71" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible82" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible83" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible84" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible86" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible87" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible88" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible89" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible90" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible91" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible92" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible93" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible94" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible95" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible96" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible97" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible98" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible99" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible100" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible101" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible102" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible103" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible104" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible105" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible106" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible107" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible108" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible109" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible110" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible111" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible112" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible113" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible114" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible115" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible116" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible117" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible118" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible119" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible120" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible121" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible122" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible123" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible124" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible125" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible126" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible127" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible128" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible129" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible130" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible131" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible132" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible133" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible134" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible135" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible136" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible137" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible138" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible139" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible140" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible141" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible142" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible143" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible144" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible145" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible146" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible147" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible148" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible149" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible150" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible151" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible152" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible153" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible154" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible155" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible156" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible157" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible158" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible159" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible160" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible161" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible162" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible163" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible164" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible165" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible166" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible167" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible168" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible169" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible170" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible171" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible172" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible173" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible174" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible175" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible176" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible177" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible178" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible179" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible180" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible181" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible182" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible183" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible184" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible185" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible186" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible187" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible188" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible189" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible190" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible85" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible72" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible73" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible74" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible75" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible76" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible77" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible78" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible79" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible80" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible81" to="HUD" method="_on_collectible_collected"]
+[connection signal="collectible_collected" from="collectibles/collectible51" to="HUD" method="_on_collectible_collected"]
+[connection signal="body_entered" from="win zone" to="win zone" method="_on_win_zone_body_entered"]
 [connection signal="body_entered" from="death zone" to="player" method="_on_death_zone_body_entered"]
+[connection signal="body_entered" from="death zone2" to="player" method="_on_death_zone_body_entered"]
+[connection signal="body_entered" from="death zone3" to="player" method="_on_death_zone_body_entered"]
