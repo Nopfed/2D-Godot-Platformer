@@ -1,0 +1,104 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://world tile set.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/objects/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://pass thru tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://Scenes/objects/collectible.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/World Tiles/motherboard gold.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/HUD.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Audio/SFX/collect 1.wav" type="AudioStream" id=8]
+[ext_resource path="res://Scenes/death zone.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/win zone.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Fonts/DotGothic16-Regular.ttf" type="DynamicFontData" id=12]
+
+
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 12 )
+
+[node name="level 2" type="Node2D"]
+
+[node name="Tiles Non-Solid" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+collision_layer = 2
+format = 1
+
+[node name="collectibles" type="Node2D" parent="."]
+position = Vector2( 31.1479, -96.2752 )
+
+[node name="collectible" parent="collectibles" instance=ExtResource( 4 )]
+position = Vector2( 152.852, 56.2752 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="win zone" parent="." instance=ExtResource( 10 )]
+position = Vector2( 190.742, -706.852 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 104, -88 )
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+current = true
+limit_left = 0
+limit_bottom = 289
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 0.25
+drag_margin_right = 0.25
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="death zone" parent="." instance=ExtResource( 9 )]
+position = Vector2( 366.572, -704.994 )
+
+[node name="Tiles Solid" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( -589824, 6, 0, -589823, 6, 0, -589822, 6, 0, -589821, 6, 0, -589820, 6, 0, -524288, 6, 0, -524287, 6, 0, -524286, 6, 0, -524285, 6, 0, -524284, 6, 0, -458752, 6, 0, -458751, 6, 0, -458750, 6, 0, -458749, 6, 0, -458748, 6, 0, -393216, 6, 0, -393215, 6, 0, -393214, 6, 0, -393213, 6, 0, -393212, 6, 0, -327680, 6, 0, -327679, 6, 0, -327678, 6, 0, -327677, 6, 0, -327676, 6, 0, -262144, 6, 0, -196608, 6, 0, -131072, 6, 0, -65536, 6, 0, 0, 6, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 65536, 6, 0, 65537, 6, 0, 65538, 6, 0, 65539, 6, 0, 65540, 6, 0, 131072, 6, 0, 131073, 6, 0, 131074, 6, 0, 131075, 6, 0, 131076, 6, 0, 196608, 6, 0, 196609, 6, 0, 196610, 6, 0, 196611, 6, 0, 196612, 6, 0, 262144, 6, 0, 262145, 6, 0, 262146, 6, 0, 262147, 6, 0, 262148, 6, 0, 327680, 6, 0, 327681, 6, 0, 327682, 6, 0, 327683, 6, 0, 327684, 6, 0, 327685, 6, 0, 327686, 6, 0 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+margin_left = 16.0
+margin_top = 568.0
+margin_right = 29.0
+margin_bottom = 581.0
+rect_rotation = 45.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x" type="Label" parent="HUD"]
+margin_left = 28.0
+margin_top = 563.0
+margin_right = 38.0
+margin_bottom = 577.0
+custom_fonts/font = SubResource( 1 )
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Collectibles" type="Label" parent="HUD"]
+margin_left = 42.0
+margin_top = 565.0
+margin_right = 80.9995
+margin_bottom = 579.0
+custom_fonts/font = SubResource( 2 )
+text = "##"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="collectSound" type="AudioStreamPlayer" parent="HUD"]
+stream = ExtResource( 8 )
+volume_db = -15.0
+[connection signal="collectible_collected" from="collectibles/collectible" to="HUD" method="_on_collectible_collected"]
+[connection signal="body_entered" from="death zone" to="player" method="_on_death_zone_body_entered"]

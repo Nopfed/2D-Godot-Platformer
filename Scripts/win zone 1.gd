@@ -4,4 +4,4 @@ extends Area2D
 func _on_win_zone_body_entered(body):
 	$"win sound".play()
 	yield($"win sound", "finished")
-	get_tree().change_scene("res://Scenes/Title Screen.tscn")
+	get_tree().change_scene("res://Scenes/levels/level 2.tscn")
