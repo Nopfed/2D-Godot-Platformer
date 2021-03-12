@@ -10,9 +10,6 @@ const MAX_SPEED = 300
 const GRAVITY = 30
 const JUMP = -600
 
-func _process(delta):
-	connect("collided_player", self, "_on_laser_collided_player")
-
 func _physics_process(_delta):
 	#move to the right
 	if Input.is_action_pressed("right"):
@@ -46,12 +43,6 @@ func _physics_process(_delta):
 
 
 func _on_death_zone_body_entered(body):
-	playing = false
-	$"death sound".play()
-	yield($"death sound", "finished")
-	get_tree().reload_current_scene()
-
-func _on_laser_collided_player():
 	playing = false
 	$"death sound".play()
 	yield($"death sound", "finished")

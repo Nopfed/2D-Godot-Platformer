@@ -33,7 +33,10 @@ position = Vector2( 152.852, 56.2752 )
 scale = Vector2( 0.2, 0.2 )
 
 [node name="win zone" parent="." instance=ExtResource( 3 )]
-position = Vector2( 190.742, -706.852 )
+position = Vector2( 522.156, -491.254 )
+
+[node name="laser cannon" parent="." instance=ExtResource( 11 )]
+position = Vector2( 373.209, -33.4069 )
 
 [node name="player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 104, -88 )
@@ -51,16 +54,13 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="death zone" parent="." instance=ExtResource( 5 )]
-position = Vector2( 370.81, 49.3436 )
+position = Vector2( 368.432, 41.0191 )
 
 [node name="Tiles Solid" type="TileMap" parent="."]
 tile_set = ExtResource( 7 )
 collision_layer = 2
 format = 1
 tile_data = PoolIntArray( -589824, 6, 0, -589823, 6, 0, -589822, 6, 0, -589821, 6, 0, -589820, 6, 0, -524288, 6, 0, -524287, 6, 0, -524286, 6, 0, -524285, 6, 0, -524284, 6, 0, -458752, 6, 0, -458751, 6, 0, -458750, 6, 0, -458749, 6, 0, -458748, 6, 0, -393216, 6, 0, -393215, 6, 0, -393214, 6, 0, -393213, 6, 0, -393212, 6, 0, -327680, 6, 0, -327679, 6, 0, -327678, 6, 0, -327677, 6, 0, -327676, 6, 0, -262144, 6, 0, -196608, 6, 0, -131072, 6, 0, -65536, 6, 0, 0, 6, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 65536, 6, 0, 65537, 6, 0, 65538, 6, 0, 65539, 6, 0, 65540, 6, 0, 131072, 6, 0, 131073, 6, 0, 131074, 6, 0, 131075, 6, 0, 131076, 6, 0, 196608, 6, 0, 196609, 6, 0, 196610, 6, 0, 196611, 6, 0, 196612, 6, 0, 262144, 6, 0, 262145, 6, 0, 262146, 6, 0, 262147, 6, 0, 262148, 6, 0, 327680, 6, 0, 327681, 6, 0, 327682, 6, 0, 327683, 6, 0, 327684, 6, 0, 327685, 6, 0, 327686, 6, 0 )
-
-[node name="laser cannon" parent="." instance=ExtResource( 11 )]
-position = Vector2( 443.372, -38.1637 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 8 )
