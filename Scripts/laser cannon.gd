@@ -10,5 +10,7 @@ func _ready():
 
 func _on_Timer_timeout():
 	add_child(pew)
+	if get_node("screenNote").is_on_screen():
+		$pewpew.play()
 	pew = laser.instance()
 	pew.position = Vector2(START_POS, 0)

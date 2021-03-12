@@ -42,7 +42,7 @@ func _physics_process(_delta):
 			v.x = lerp(v.x, 0, 0.9)
 
 
-func _on_death_zone_body_entered(body):
+func _on_death_zone_body_entered(_body):
 	playing = false
 	$"death sound".play()
 	yield($"death sound", "finished")

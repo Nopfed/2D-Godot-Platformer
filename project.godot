@@ -62,6 +62,7 @@ jump={
 2d_physics/layer_4="collectible"
 2d_physics/layer_5="hazards"
 2d_physics/layer_6="win zone"
+2d_physics/layer_7="laser cannon"
 
 [rendering]
 
