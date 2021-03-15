@@ -13,7 +13,7 @@ func _on_laser_body_entered(body):
 	if body.is_in_group("player"):
 		#visible = false
 		#position *= 0
-		get_tree().get_root().get_node(get_tree().current_scene.name +"/"+ "player").kill()
+		body.kill()
 	else:
 		queue_free()
 	

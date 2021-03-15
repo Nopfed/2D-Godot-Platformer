@@ -24,14 +24,14 @@ func _physics_process(_delta):
 			#v.x -= SPEED if v.x > -MAX_SPEED else 0
 			v.x = -SPEED
 	
-	v.y = v.y + GRAVITY
+	v.y = v.y + GRAVITY if v.y < GRAVITY*30 else v.y
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor() and playing:
 		v.y = JUMP
 		jumping = true
 		$"Jump Sound".play()
 	
-	if Input.is_action_just_released("jump") and v.y < -100:
+	if Input.is_action_just_released("jump") and v.y < -100 and jumping:
 		v.y = -100
 	
 	if jumping and v.y >= 0:
@@ -47,6 +47,9 @@ func _physics_process(_delta):
 	if !Input.is_action_pressed("right"):
 		if !Input.is_action_pressed("left"):
 			v.x = lerp(v.x, 0, 0.9)
+
+func bounce():
+	v *= -2
 
 func kill():
 	playing = false
