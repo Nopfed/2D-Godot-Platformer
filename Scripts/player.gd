@@ -5,6 +5,7 @@ var v = Vector2(0, 0)
 var collectibles = 0
 var playing = true
 var jumping = false
+onready var floortype = "normal"
 
 const SPEED = 300
 const MAX_SPEED = 300
@@ -16,18 +17,30 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("right"):
 		if !Input.is_action_pressed("left"):
 			#v.x += SPEED if v.x < MAX_SPEED else 0
-			v.x = SPEED
+			if floortype == "sticky":
+				v.x = SPEED*.5
+			else:
+				v.x = SPEED
+	
 	
 	#move to the left
 	if Input.is_action_pressed("left"):
 		if !Input.is_action_pressed("right"):
 			#v.x -= SPEED if v.x > -MAX_SPEED else 0
-			v.x = -SPEED
+			if floortype == "sticky":
+				v.x = -SPEED*.5
+			else:
+				v.x = -SPEED
+
 	
-	v.y = v.y + GRAVITY if v.y < GRAVITY*30 else v.y
+	v.y = v.y + GRAVITY if v.y <= -JUMP*2 else v.y
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor() and playing:
-		v.y = JUMP
+		if floortype == "sticky":
+			v.y = JUMP*.7
+		else:
+			v.y = JUMP
+			
 		jumping = true
 		$"Jump Sound".play()
 	
@@ -42,14 +55,36 @@ func _physics_process(_delta):
 	#calculate movement and floor direction
 	v = move_and_slide_with_snap(v, snap, Vector2.UP) if playing else v
 	
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider.is_in_group("ice"):
+			friction("icy")
+			break
+		elif collision.collider.is_in_group("goop"):
+			friction("sticky")
+			break
+		else:
+			friction("normal")
+			break
+
 	
 	#inertia/friction
-	if !Input.is_action_pressed("right"):
-		if !Input.is_action_pressed("left"):
-			v.x = lerp(v.x, 0, 0.9)
+	if floortype == "icy":
+		v.x = lerp(v.x, 0, 0.01)
+	elif floortype == "sticky":
+		v.x = lerp(v.x, 0, 1)
+	elif floortype == "bouncy":
+		v.x = lerp(v.x, 0, 0.1)
+	else:
+		v.x = lerp(v.x, 0, 0.5)
+
+func friction(type):
+	floortype = type
 
 func bounce():
-	v *= -2
+	floortype = "bouncy"
+	v = Vector2(v.x, JUMP*2)
+
 
 func kill():
 	playing = false

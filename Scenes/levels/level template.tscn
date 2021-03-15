@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://world tile set.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/objects/player.tscn" type="PackedScene" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Scenes/objects/laser cannon.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Fonts/DotGothic16-Regular.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://Scenes/objects/bounceBlock.tscn" type="PackedScene" id=13]
+[ext_resource path="res://goop.tres" type="TileSet" id=14]
+[ext_resource path="res://ice.tres" type="TileSet" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 12 )
@@ -71,13 +73,32 @@ __meta__ = {
 position = Vector2( 528, -704 )
 
 [node name="bounceBlock" parent="." instance=ExtResource( 13 )]
-position = Vector2( 856, -48 )
+position = Vector2( 672, -704 )
+scale = Vector2( 3, 1 )
 
-[node name="Tiles Solid" type="TileMap" parent="."]
+[node name="Ice" type="TileMap" parent="." groups=[
+"ice",
+]]
+tile_set = ExtResource( 15 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( -65528, 0, 0, -65527, 0, 0, -65526, 0, 0 )
+
+[node name="Goop" type="TileMap" parent="." groups=[
+"goop",
+]]
+tile_set = ExtResource( 14 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( -65524, 0, 0, -65523, 0, 0, -65522, 0, 0 )
+
+[node name="Tiles Solid" type="TileMap" parent="." groups=[
+"world",
+]]
 tile_set = ExtResource( 1 )
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( -589824, 6, 0, -589823, 6, 0, -589822, 6, 0, -589821, 6, 0, -589820, 6, 0, -524288, 6, 0, -524287, 6, 0, -524286, 6, 0, -524285, 6, 0, -524284, 6, 0, -458752, 6, 0, -458751, 6, 0, -458750, 6, 0, -458749, 6, 0, -458748, 6, 0, -393216, 6, 0, -393215, 6, 0, -393214, 6, 0, -393213, 6, 0, -393212, 6, 0, -327680, 6, 0, -327679, 6, 0, -327678, 6, 0, -327677, 6, 0, -327676, 6, 0, -262144, 6, 0, -196608, 6, 0, -131072, 6, 0, -65536, 6, 0, 0, 6, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 5, 6, 0, 6, 6, 0, 7, 6, 0, 8, 6, 0, 9, 6, 0, 10, 6, 0, 11, 6, 0, 12, 6, 0, 13, 6, 0, 14, 6, 0, 15, 6, 0, 16, 6, 0, 17, 6, 0, 65536, 6, 0, 65537, 6, 0, 65538, 6, 0, 65539, 6, 0, 65540, 6, 0, 65541, 6, 0, 65542, 6, 0, 131072, 6, 0, 131073, 6, 0, 131074, 6, 0, 131075, 6, 0, 131076, 6, 0, 131077, 6, 0, 131078, 6, 0, 196608, 6, 0, 196609, 6, 0, 196610, 6, 0, 196611, 6, 0, 196612, 6, 0, 196613, 6, 0, 196614, 6, 0, 262144, 6, 0, 262145, 6, 0, 262146, 6, 0, 262147, 6, 0, 262148, 6, 0, 262149, 6, 0, 262150, 6, 0, 327680, 6, 0, 327681, 6, 0, 327682, 6, 0, 327683, 6, 0, 327684, 6, 0, 327685, 6, 0, 327686, 6, 0 )
+tile_data = PoolIntArray( -589824, 6, 0, -589823, 6, 0, -589822, 6, 0, -589821, 6, 0, -589820, 6, 0, -524288, 6, 0, -524287, 6, 0, -524286, 6, 0, -524285, 6, 0, -524284, 6, 0, -458752, 6, 0, -458751, 6, 0, -458750, 6, 0, -458749, 6, 0, -458748, 6, 0, -393216, 6, 0, -393215, 6, 0, -393214, 6, 0, -393213, 6, 0, -393212, 6, 0, -327680, 6, 0, -327679, 6, 0, -327678, 6, 0, -327677, 6, 0, -327676, 6, 0, -262144, 6, 0, -196608, 6, 0, -131072, 6, 0, -65536, 6, 0, -65529, 6, 0, -65525, 6, 0, -65521, 6, 0, 0, 6, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 5, 6, 0, 6, 6, 0, 7, 6, 0, 8, 6, 0, 9, 6, 0, 10, 6, 0, 11, 6, 0, 12, 6, 0, 13, 6, 0, 14, 6, 0, 15, 6, 0, 16, 6, 0, 17, 6, 0, 65536, 6, 0, 65537, 6, 0, 65538, 6, 0, 65539, 6, 0, 65540, 6, 0, 65541, 6, 0, 65542, 6, 0, 131072, 6, 0, 131073, 6, 0, 131074, 6, 0, 131075, 6, 0, 131076, 6, 0, 131077, 6, 0, 131078, 6, 0, 196608, 6, 0, 196609, 6, 0, 196610, 6, 0, 196611, 6, 0, 196612, 6, 0, 196613, 6, 0, 196614, 6, 0, 262144, 6, 0, 262145, 6, 0, 262146, 6, 0, 262147, 6, 0, 262148, 6, 0, 262149, 6, 0, 262150, 6, 0, 327680, 6, 0, 327681, 6, 0, 327682, 6, 0, 327683, 6, 0, 327684, 6, 0, 327685, 6, 0, 327686, 6, 0 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 6 )
