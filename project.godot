@@ -18,7 +18,7 @@ _global_script_class_icons={
 config/name="2D simple platformer"
 config/description="A simple 2D platformer game."
 run/main_scene="res://Scenes/Title Screen.tscn"
-config/icon="res://Assets/Sprites/Misc/player.png"
+config/icon="res://Assets/World Tiles/motherboard gold.png"
 
 [display]
 
@@ -64,10 +64,18 @@ jump={
 2d_physics/layer_6="win zone"
 2d_physics/layer_7="laser cannon"
 
+[physics]
+
+common/physics_jitter_fix=0.1
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
+threads/thread_model=2
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+quality/reflections/high_quality_ggx=false
 environment/default_clear_color=Color( 0.00784314, 0.176471, 0.0980392, 1 )
 environment/default_environment="res://default_env.tres"
