@@ -21,6 +21,8 @@ func _physics_process(_delta):
 			#v.x += SPEED if v.x < MAX_SPEED else 0
 			if floortype == "sticky":
 				v.x = SPEED*.5
+			elif floortype == "icy":
+				v.x = SPEED*1.3
 			else:
 				v.x = SPEED
 	
@@ -31,6 +33,8 @@ func _physics_process(_delta):
 			#v.x -= SPEED if v.x > -MAX_SPEED else 0
 			if floortype == "sticky":
 				v.x = -SPEED*.5
+			elif floortype == "icy":
+				v.x = -SPEED*1.3
 			else:
 				v.x = -SPEED
 
@@ -47,21 +51,6 @@ func _physics_process(_delta):
 		$"Jump Sound".play()
 	
 	#wall-jumping
-#	if Input.is_action_just_pressed("jump") and is_on_wall() and !is_on_floor() and playing:
-#		floortype = "bouncy"
-#		if Input.is_action_pressed("right") and !Input.is_action_pressed("left"):
-#			walljumpingLeft = true
-#			walljumpingRight = false
-#			v = Vector2(-SPEED*2, JUMP)
-#			jumping = true
-#			$"Jump Sound".play()
-#		elif Input.is_action_pressed("left") and !Input.is_action_pressed("right"):
-#			walljumpingRight = true
-#			walljumpingLeft = false
-#			v = Vector2(SPEED*2, JUMP)
-#			jumping = true
-#			$"Jump Sound".play()
-			
 	if is_on_wall() and !is_on_floor() and Input.is_action_pressed("left") and !Input.is_action_pressed("right") and Input.is_action_just_pressed("jump"):
 		floortype = "bouncy"
 		walljumpingRight = true
