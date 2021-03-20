@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://world tile set.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/objects/player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Fonts/DotGothic16-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Scripts/win zone 0.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Audio/SFX/win sound.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Sprites/Misc/coin.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.0029, 32.0704 )
@@ -620,12 +621,11 @@ shape = SubResource( 1 )
 script = ExtResource( 6 )
 
 [node name="TextureRect" type="TextureRect" parent="HUD"]
-margin_left = 16.0
-margin_top = 568.0
-margin_right = 29.0
-margin_bottom = 581.0
-rect_rotation = 45.0
-texture = ExtResource( 5 )
+margin_left = 10.8244
+margin_top = 570.378
+margin_right = 23.8244
+margin_bottom = 583.378
+texture = ExtResource( 12 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false

@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/objects/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://pass thru tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://Scenes/objects/collectible.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/World Tiles/motherboard gold.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Misc/coin.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/objects/moving platform.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Audio/SFX/collect 1.wav" type="AudioStream" id=8]
@@ -1213,11 +1213,10 @@ tile_data = PoolIntArray( -1245065, 6, 0, -1245064, 6, 0, -1245063, 6, 0, -12450
 script = ExtResource( 6 )
 
 [node name="TextureRect" type="TextureRect" parent="HUD"]
-margin_left = 16.0
-margin_top = 568.0
-margin_right = 29.0
-margin_bottom = 581.0
-rect_rotation = 45.0
+margin_left = 12.2919
+margin_top = 570.119
+margin_right = 25.2919
+margin_bottom = 583.119
 texture = ExtResource( 5 )
 expand = true
 __meta__ = {
