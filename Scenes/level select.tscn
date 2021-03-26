@@ -1,0 +1,144 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Fonts/DotGothic16-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Audio/SFX/UI boop 2 short.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Audio/SFX/UI boop 1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Scripts/level 0 button.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/level 2 button.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/level 3 button.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/level 1 button.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 72
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 1 )
+
+[node name="level select" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1088.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="title text" type="Label" parent="."]
+margin_left = 184.0
+margin_top = 32.0
+margin_right = 904.0
+margin_bottom = 137.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0313726, 0.721569, 0.231373, 1 )
+text = "level select"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level 0" type="Button" parent="."]
+margin_left = 160.0
+margin_top = 176.0
+margin_right = 215.0
+margin_bottom = 196.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0313726, 0.721569, 0.231373, 1 )
+custom_colors/font_color_hover = Color( 0.992157, 0.596078, 0.00784314, 1 )
+custom_colors/font_color_pressed = Color( 0.0235294, 0.662745, 0.823529, 1 )
+text = "level 0"
+flat = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="boop1" type="AudioStreamPlayer" parent="level 0"]
+stream = ExtResource( 3 )
+volume_db = -15.0
+
+[node name="boop2" type="AudioStreamPlayer" parent="level 0"]
+stream = ExtResource( 2 )
+
+[node name="level 1" type="Button" parent="."]
+margin_left = 160.0
+margin_top = 240.0
+margin_right = 284.0
+margin_bottom = 294.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0313726, 0.721569, 0.231373, 1 )
+custom_colors/font_color_hover = Color( 0.992157, 0.596078, 0.00784314, 1 )
+custom_colors/font_color_pressed = Color( 0.0235294, 0.662745, 0.823529, 1 )
+text = "level 1"
+flat = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="boop1" type="AudioStreamPlayer" parent="level 1"]
+stream = ExtResource( 3 )
+volume_db = -15.0
+
+[node name="boop2" type="AudioStreamPlayer" parent="level 1"]
+stream = ExtResource( 2 )
+
+[node name="level 2" type="Button" parent="."]
+margin_left = 160.0
+margin_top = 304.0
+margin_right = 284.0
+margin_bottom = 358.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0313726, 0.721569, 0.231373, 1 )
+custom_colors/font_color_hover = Color( 0.992157, 0.596078, 0.00784314, 1 )
+custom_colors/font_color_pressed = Color( 0.0235294, 0.662745, 0.823529, 1 )
+text = "level 2"
+flat = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="boop1" type="AudioStreamPlayer" parent="level 2"]
+stream = ExtResource( 3 )
+volume_db = -15.0
+
+[node name="boop2" type="AudioStreamPlayer" parent="level 2"]
+stream = ExtResource( 2 )
+
+[node name="level 3" type="Button" parent="."]
+margin_left = 160.0
+margin_top = 368.0
+margin_right = 284.0
+margin_bottom = 422.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0313726, 0.721569, 0.231373, 1 )
+custom_colors/font_color_hover = Color( 0.992157, 0.596078, 0.00784314, 1 )
+custom_colors/font_color_pressed = Color( 0.0235294, 0.662745, 0.823529, 1 )
+text = "level 3"
+flat = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="boop1" type="AudioStreamPlayer" parent="level 3"]
+stream = ExtResource( 3 )
+volume_db = -15.0
+
+[node name="boop2" type="AudioStreamPlayer" parent="level 3"]
+stream = ExtResource( 2 )
+[connection signal="mouse_entered" from="level 0" to="level 0" method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="level 0" to="level 0" method="_on_Button_pressed"]
+[connection signal="mouse_entered" from="level 1" to="level 1" method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="level 1" to="level 1" method="_on_Button_pressed"]
+[connection signal="mouse_entered" from="level 2" to="level 2" method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="level 2" to="level 2" method="_on_Button_pressed"]
+[connection signal="mouse_entered" from="level 3" to="level 3" method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="level 3" to="level 3" method="_on_Button_pressed"]

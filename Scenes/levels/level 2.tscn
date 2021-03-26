@@ -992,7 +992,7 @@ position = Vector2( 2760.85, 80.2752 )
 scale = Vector2( 0.2, 0.2 )
 
 [node name="player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 120, -88 )
+position = Vector2( 104, -88 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 current = true

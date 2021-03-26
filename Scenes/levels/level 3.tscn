@@ -1136,7 +1136,7 @@ position = Vector2( 560.852, -55.7248 )
 scale = Vector2( 0.2, 0.2 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 128, -56 )
+position = Vector2( 104, -88 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 current = true
@@ -1194,10 +1194,10 @@ tile_data = PoolIntArray( -1507294, 6, 0, -1507293, 6, 0, -1507292, 6, 0, -15072
 script = ExtResource( 6 )
 
 [node name="TextureRect" type="TextureRect" parent="HUD"]
-margin_left = 16.0
-margin_top = 568.0
-margin_right = 29.0
-margin_bottom = 581.0
+margin_left = 11.0676
+margin_top = 569.888
+margin_right = 24.0676
+margin_bottom = 582.888
 texture = ExtResource( 5 )
 expand = true
 __meta__ = {

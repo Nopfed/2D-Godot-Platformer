@@ -18,6 +18,7 @@ _global_script_class_icons={
 config/name="2D simple platformer"
 config/description="A simple 2D platformer game."
 run/main_scene="res://Scenes/Title Screen.tscn"
+config/use_custom_user_dir=true
 config/icon="res://Assets/World Tiles/motherboard gold.png"
 
 [display]

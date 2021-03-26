@@ -7,7 +7,19 @@ var playing = true
 var jumping = false
 var walljumpingRight = false
 var walljumpingLeft = false
+var file_path = "user://checkpoint.dat"
 onready var floortype = "normal"
+
+func _ready():
+	var file = File.new()
+	
+	if file.file_exists(file_path):
+		var error = file.open(file_path, File.READ)
+		
+		if error == OK:
+			#print(file.get_var())
+			position = file.get_var()
+			file.close()
 
 const SPEED = 300
 const MAX_SPEED = 300
