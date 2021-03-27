@@ -5,7 +5,7 @@
 [ext_resource path="res://Scripts/Play Button.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/settings button.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Audio/SFX/UI boop 1.wav" type="AudioStream" id=5]
-[ext_resource path="res://Scripts/level select.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/level select button.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Audio/SFX/UI boop 2 short.wav" type="AudioStream" id=7]
 [ext_resource path="res://Scripts/Title Screen.gd" type="Script" id=8]
 

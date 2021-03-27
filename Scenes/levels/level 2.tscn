@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Fonts/DotGothic16-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/objects/collectible.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Scenes/objects/laser cannon.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/objects/moving platform.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scripts/win zone 2.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/checkpoint.tscn" type="PackedScene" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -1111,6 +1112,10 @@ __meta__ = {
 
 [node name="platform" parent="moving platform10" instance=ExtResource( 12 )]
 
+[node name="checkpoint" parent="." instance=ExtResource( 14 )]
+position = Vector2( 6111.59, -20.4088 )
+scale = Vector2( 2, 2 )
+
 [node name="Tiles Solid" type="TileMap" parent="."]
 tile_set = ExtResource( 7 )
 collision_layer = 2
@@ -1374,3 +1379,4 @@ volume_db = -15.0
 [connection signal="collectible_collected" from="collectibles/collectible27" to="HUD" method="_on_collectible_collected"]
 [connection signal="body_entered" from="death zone" to="player" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="death zone2" to="player" method="_on_death_zone_body_entered"]
+[connection signal="body_entered" from="checkpoint" to="player" method="_on_checkpoint_body_entered"]

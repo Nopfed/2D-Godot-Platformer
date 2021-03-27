@@ -7,24 +7,18 @@ var playing = true
 var jumping = false
 var walljumpingRight = false
 var walljumpingLeft = false
-var file_path = "user://checkpoint.dat"
 onready var floortype = "normal"
-
-func _ready():
-	var file = File.new()
-	
-	if file.file_exists(file_path):
-		var error = file.open(file_path, File.READ)
-		
-		if error == OK:
-			#print(file.get_var())
-			position = file.get_var()
-			file.close()
+#var checkpointFlag = false
+var checkpointPos = Vector2(104, -88)
 
 const SPEED = 300
 const MAX_SPEED = 300
 const GRAVITY = 30
 const JUMP = -615
+
+func _ready():
+	#checkpointFlag = false
+	checkpointPos = Vector2(104, -88)
 
 func _physics_process(_delta):
 	#move to the right
@@ -128,7 +122,15 @@ func kill():
 	playing = false
 	$"death sound".play()
 	yield($"death sound", "finished")
-	get_tree().reload_current_scene()
+	position = checkpointPos
+	v = Vector2.ZERO
+	playing = true
 
 func _on_death_zone_body_entered(_body):
 	kill()
+
+func _on_checkpoint_body_entered(body):
+	if body.is_in_group("player"):
+			
+		#checkpointFlag = true
+		checkpointPos = body.position

@@ -12,7 +12,7 @@
 [ext_resource path="res://Scripts/win zone 0.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Audio/SFX/win sound.wav" type="AudioStream" id=11]
 [ext_resource path="res://Assets/Sprites/Misc/coin.png" type="Texture" id=12]
-[ext_resource path="res://Scripts/level 0.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/checkpoint.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.0029, 32.0704 )
@@ -24,7 +24,6 @@ font_data = ExtResource( 9 )
 font_data = ExtResource( 9 )
 
 [node name="level 0" type="Node2D"]
-script = ExtResource( 13 )
 
 [node name="Tiles Non-Solid" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
@@ -199,11 +198,11 @@ position = Vector2( 4480.85, -127.725 )
 scale = Vector2( 0.2, 0.2 )
 
 [node name="collectible42" parent="collectibles" instance=ExtResource( 4 )]
-position = Vector2( 4928.85, -375.725 )
+position = Vector2( 4912.85, -375.725 )
 scale = Vector2( 0.2, 0.2 )
 
 [node name="collectible43" parent="collectibles" instance=ExtResource( 4 )]
-position = Vector2( 5000.85, -375.725 )
+position = Vector2( 5008.85, -375.725 )
 scale = Vector2( 0.2, 0.2 )
 
 [node name="collectible44" parent="collectibles" instance=ExtResource( 4 )]
@@ -619,6 +618,10 @@ texture = ExtResource( 7 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="death zone5"]
 shape = SubResource( 1 )
 
+[node name="checkpoint" parent="." instance=ExtResource( 13 )]
+position = Vector2( 4991.9, -479.405 )
+scale = Vector2( 3, 3 )
+
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 6 )
 
@@ -778,3 +781,4 @@ volume_db = -15.0
 [connection signal="body_entered" from="death zone3" to="player" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="death zone4" to="player" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="death zone5" to="player" method="_on_death_zone_body_entered"]
+[connection signal="body_entered" from="checkpoint" to="player" method="_on_checkpoint_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://world tile set.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/objects/player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/win zone.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/objects/laser cannon.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Fonts/DotGothic16-Regular.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://Scenes/checkpoint.tscn" type="PackedScene" id=13]
 [ext_resource path="res://ice.tres" type="TileSet" id=15]
 [ext_resource path="res://Scripts/win zone 3.gd" type="Script" id=16]
 
@@ -1174,6 +1175,10 @@ scale = Vector2( 60, 5 )
 position = Vector2( 11104, 176 )
 scale = Vector2( 17, 5 )
 
+[node name="checkpoint" parent="." instance=ExtResource( 13 )]
+position = Vector2( 4328.26, -798.526 )
+scale = Vector2( 3, 3 )
+
 [node name="Ice" type="TileMap" parent="." groups=[
 "ice",
 ]]
@@ -1492,3 +1497,4 @@ volume_db = -15.0
 [connection signal="body_entered" from="death zone4" to="player" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="death zone5" to="player" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="death zone6" to="player" method="_on_death_zone_body_entered"]
+[connection signal="body_entered" from="checkpoint" to="player" method="_on_checkpoint_body_entered"]
